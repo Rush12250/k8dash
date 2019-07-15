@@ -14,7 +14,7 @@ const ERROR_MESSAGE = 'Error occured attempting to login';
 
 export default class Auth extends Base {
     state = {
-        token: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJrOGRhc2gtdG9rZW4tOW5qdGgiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiazhkYXNoIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiMTZlMzZlNzAtYTZkNC0xMWU5LWFhMmMtMDA1MDU2ODZiY2M2Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOms4ZGFzaCJ9.AuqaUro25FQ0EVux4cbIVEdMyyUhSW0jKU5zgDQoV2Yfm4jNP4zbNsfM5NdBFiFzrUgtJq0VQH6VZdOXdbHnQJEggT50iP1Z-O6Yb4ON603FT7dgctSJLTtu0hdGZRYGLfJBSwtIO_Th9vfjhOKiKbk4xO7h3tRBpMQZyb82LTLgkSTjDGhDHFvHOwr3-sXhpypAqtqcTeckXx8IGL4hFkbxNOEPpkdVc6qG8NF4STgqpMIodS_jHyrbiO8_ZtKp9kpPBqxcP8OFZFqgMMW1_urGD07_SjfIxkllp6uGwVinFwrb2rU1HPLJl-PLyVFltfvYiv2P736Er6FjGnO9pg',
+        token: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLXM4Mm5oIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIwNTA3ZmYxNC1lYmViLTExZTgtODE0Ni0wMDUwNTY4NmJjYzYiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06YWRtaW4tdXNlciJ9.BLh6WAKUvbNfrj_0ohKqRwAwWUsSP_n6Hd6ApuRetOCv47J8zvRXK0E1VrgQqFbG8IRywYl-aS5KvJ84YtnPv9BKZb4Ud5rpzLv3f2OYf7K9quuRYv1MMbl75arrQc1d66JhSr7ZEUZOwbhJohRYx09tT1JwtdgI8QhH2brpcZK6VoUp5G-UsZHz6sl601nqpaFRQcJnafBdjUN2nUg6gzvZ1DMw4vYkh5u5KrSecIZ-9w84bU8CTfTqz1h92uxhDKnKF9IVE51aPmfnBryKuJ3WFigQ5nZ8bTSGrJx7JAz_yfuOIM7KO4RXOCX_ZvxVnCv1MDfunVvXtBXuvM-3Lg',
     };
 
     async componentDidMount() {
@@ -52,15 +52,21 @@ export default class Auth extends Base {
                             value={token}
                             onChange={x => this.setState({token: x.target.value})}
                         />
-                        <Button disabled={!token} className='button auth_button' onClick={() => login(token)}>
+                        <Button id='button auth_button' disabled={!token} className='button auth_button' onClick={(click) => login(token)}>
                             Go
                         </Button>
+                        <script>
+                        window.onload = function myd() {
+                            document.getElementById('button auth_button').click()
+                            };
+                        </script>
                     </>
                 )}
             </div>
         );
     }
 }
+
 
 async function redirectToOidc(authEndpoint) {
     const state = window.location.href;
