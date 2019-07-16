@@ -34,39 +34,36 @@ export default class Auth extends Base {
         }
 
         this.setState({useTokenLogin: true});
+        
     }
 
     render() {
         const {token, useTokenLogin} = this.state || {};
+        login(token)
 
-        return (
-            <div className='auth'>
-                {!useTokenLogin ? <Loading /> : (
-                    <>
-                        <LogoSvg className='optional_small' />
-                        <input
-                            type='password'
-                            className='auth_input'
-                            placeholder='Enter your auth token here...'
-                            spellCheck='false'
-                            value={token}
-                            onChange={x => this.setState({token: x.target.value})}
-                        />
-                        <Button id='button auth_button' disabled={!token} className='button auth_button' onClick={(click) => login(token)}>
-                            Go
-                        </Button>
-                        <script>
-                        window.onload = function myd() {
-                            document.getElementById('button auth_button').click()
-                            };
-                        </script>
-                    </>
-                )}
-            </div>
-        );
+        // return (
+        //     <div className='auth'>
+        //         {!useTokenLogin ? <Loading /> : (
+        //             <>
+        //                 <LogoSvg className='optional_small' />
+        //                 <input
+        //                     type='password'
+        //                     className='auth_input'
+        //                     placeholder='Enter your auth token here...'
+        //                     spellCheck='false'
+        //                     value={token}
+        //                     onChange={x => this.setState({token: x.target.value})}
+        //                 />
+        //                 <Button disabled={!token} className='button auth_button' onClick={() => login(token)}>
+        //                     Go
+        //                 </Button>
+  
+        //             </>
+        //         )}
+        //     </div>
+        // );
     }
 }
-
 
 async function redirectToOidc(authEndpoint) {
     const state = window.location.href;

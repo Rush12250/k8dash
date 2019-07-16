@@ -29,14 +29,14 @@ export default class Role extends Base {
             <div id='content'>
                 <ItemHeader title={['Role', namespace, name]} ready={!!item}>
                     <>
-                        <SaveButton
+                        {/* <SaveButton
                             item={item}
                             onSave={x => service.put(x)}
                         />
 
                         <DeleteButton
                             onDelete={() => service.delete(namespace, name)}
-                        />
+                        /> */}
                     </>
                 </ItemHeader>
 

@@ -28,14 +28,14 @@ export default class Ingress extends Base {
             <div id='content'>
                 <ItemHeader title={['Ingress', namespace, name]} ready={!!item}>
                     <>
-                        <SaveButton
+                        {/* <SaveButton
                             item={item}
                             onSave={x => service.put(x)}
                         />
 
                         <DeleteButton
                             onDelete={() => service.delete(namespace, name)}
-                        />
+                        /> */}
                     </>
                 </ItemHeader>
 

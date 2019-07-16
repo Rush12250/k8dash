@@ -35,14 +35,14 @@ export default class ClusterRoleBinding extends Base {
             <div id='content'>
                 <ItemHeader title={['Cluster Role Binding', name]} ready={!!item}>
                     <>
-                        <SaveButton
+                        {/* <SaveButton
                             item={item}
                             onSave={x => service.put(x)}
                         />
 
                         <DeleteButton
                             onDelete={() => service.delete(name)}
-                        />
+                        /> */}
                     </>
                 </ItemHeader>
 

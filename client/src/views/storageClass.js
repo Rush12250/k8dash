@@ -27,14 +27,14 @@ export default class StorageClass extends Base {
             <div id='content'>
                 <ItemHeader title={['Storage Class', name]} ready={!!item}>
                     <>
-                        <SaveButton
+                        {/* <SaveButton
                             item={item}
                             onSave={x => service.put(x)}
                         />
 
                         <DeleteButton
                             onDelete={() => service.delete(name)}
-                        />
+                        /> */}
                     </>
                 </ItemHeader>
 

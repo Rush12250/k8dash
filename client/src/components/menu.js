@@ -74,7 +74,7 @@ export default class Menu extends Base {
                     </Group>
 
                     {/* Storage */}
-                    <Group>
+                    {/* <Group>
                         {canView(rules, api.storageClass) && (
                             <MenuItem title='Storage' path='storageclass' resource='StorageClass' onClick={onClick} />
                         )}
@@ -86,7 +86,7 @@ export default class Menu extends Base {
                         {canView(rules, api.persistentVolumeClaim) && (
                             <MenuItem title='Claims' path='persistentvolumeclaim' resource='PersistentVolumeClaim' onClick={onClick} />
                         )}
-                    </Group>
+                    </Group> */}
 
                     {/* Security */}
                     <Group>
@@ -94,13 +94,13 @@ export default class Menu extends Base {
                             <MenuItem title='Accounts' path='serviceaccount' resource='ServiceAccount' onClick={onClick} />
                         )}
 
-                        {canView(rules, api.role, api.clusterRole) && (
+                        {/* {canView(rules, api.role, api.clusterRole) && (
                             <MenuItem title='Roles' path='role' resource='Role' additionalPaths={['clusterrole']} onClick={onClick} />
                         )}
 
                         {canView(rules, api.roleBinding, api.clusterRoleBinding) && (
                             <MenuItem title='Bindings' path='rolebinding' resource='Role' additionalPaths={['clusterrolebinding']} onClick={onClick} />
-                        )}
+                        )} */}
 
                         {canView(rules, api.secret) && (
                             <MenuItem title='Secrets' path='secret' resource='Secret' onClick={onClick} />

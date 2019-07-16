@@ -29,14 +29,14 @@ export default class ClusterRole extends Base {
             <div id='content'>
                 <ItemHeader title={['Cluster Role', name]} ready={!!item}>
                     <>
-                        <SaveButton
+                        {/* <SaveButton
                             item={item}
                             onSave={x => service.put(x)}
                         />
 
                         <DeleteButton
                             onDelete={() => service.delete(name)}
-                        />
+                        /> */}
                     </>
                 </ItemHeader>
 

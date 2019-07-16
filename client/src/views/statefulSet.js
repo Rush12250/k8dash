@@ -55,14 +55,14 @@ export default class StatefulSet extends Base {
                             scaleApi={service.scale}
                         />
 
-                        <SaveButton
+                        {/* <SaveButton
                             item={item}
                             onSave={x => service.put(x)}
                         />
 
                         <DeleteButton
                             onDelete={() => service.delete(namespace, name)}
-                        />
+                        /> */}
                     </>
                 </ItemHeader>
 

@@ -27,14 +27,14 @@ export default class PersistentVolume extends Base {
             <div id='content'>
                 <ItemHeader title={['Persistent Volume', name]} ready={!!item}>
                     <>
-                        <SaveButton
+                        {/* <SaveButton
                             item={item}
                             onSave={x => service.put(x)}
                         />
 
                         <DeleteButton
                             onDelete={() => service.delete(name)}
-                        />
+                        /> */}
                     </>
                 </ItemHeader>
 

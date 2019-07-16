@@ -49,14 +49,14 @@ export default class DaemonSet extends Base {
             <div id='content'>
                 <ItemHeader title={['Daemon Set', namespace, name]} ready={!!item}>
                     <>
-                        <SaveButton
+                        {/* <SaveButton
                             item={item}
                             onSave={x => service.put(x)}
                         />
 
                         <DeleteButton
                             onDelete={() => service.delete(namespace, name)}
-                        />
+                        /> */}
                     </>
                 </ItemHeader>
 

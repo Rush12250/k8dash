@@ -55,14 +55,14 @@ export default class Pod extends Base {
                             <span className='button_label'>Exec</span>
                         </a>
 
-                        <SaveButton
+                        {/* <SaveButton
                             item={item}
                             onSave={x => service.put(x)}
                         />
 
                         <DeleteButton
                             onDelete={() => service.delete(namespace, name)}
-                        />
+                        /> */}
                     </>
                 </ItemHeader>
 
